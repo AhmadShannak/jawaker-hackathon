@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 public class Controller : MonoBehaviour {
   [SerializeField]
   Player player;
+  [SerializeField]
+  Transform mountains;
 
   Transform camera;
   float pauseFuel = 15;
@@ -41,6 +43,9 @@ public class Controller : MonoBehaviour {
     }
     this.transform.position = Vector2.zero; // Optional
     this.transform.localScale = scale;
+    // Now ssetting the mountains
+    mountains.position = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 10));
+    mountains.localScale = new Vector3(scale.x,mountains.localScale.y,0);
   }
 
   public void OnMouseDown() {
