@@ -27,10 +27,12 @@ public class Ground : MonoBehaviour {
       rb.velocity = velocity;
     }
   }
+
   void OnCollisionExit2D(Collision2D other) {
     if (other.transform.CompareTag("Player"))
       other.transform.localEulerAngles = Vector3.zero;
   }
+
   void Reset() {
      player.SwitchAnimation("Idle");
   }
