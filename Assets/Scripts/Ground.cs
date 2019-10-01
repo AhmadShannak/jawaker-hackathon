@@ -21,12 +21,11 @@ public class Ground : MonoBehaviour {
 
   void OnCollisionEnter2D(Collision2D other) {
     if (other.transform.CompareTag("Player")) {
-      player.SwitchAnimation("Jump");
-      Invoke("Reset",1f);
       Rigidbody2D rb = other.gameObject.GetComponent<Rigidbody2D>();
       other.transform.localEulerAngles = Vector3.zero;
       rb.velocity = Vector2.zero;
       rb.velocity = velocity;
+      player.SwitchAnimation("Jumping");
     }
   }
 
@@ -45,11 +44,8 @@ public class Ground : MonoBehaviour {
   }
 
   void OnCollisionExit2D(Collision2D other) {
-    if (other.transform.CompareTag("Player"))
+    if (other.transform.CompareTag("Player")) {
       other.transform.localEulerAngles = Vector3.zero;
-  }
-
-  void Reset() {
-     player.SwitchAnimation("Idle");
+    }
   }
 }
