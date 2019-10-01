@@ -15,6 +15,8 @@ public class Player : MonoBehaviour {
   void Start() {
     playerRigidbody = this.GetComponent<Rigidbody2D>();
     playerRigidbody.velocity = new Vector2(4, -5);
+    this.transform.position = Camera.main.ViewportToWorldPoint(new Vector3(0,1.2f,10));
+    // this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 0);
   }
 
   public void SwitchAnimation(string name) {
