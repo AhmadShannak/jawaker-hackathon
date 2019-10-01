@@ -12,8 +12,11 @@ public class Controller : MonoBehaviour {
   bool useFuel = false;
   float maxFuel = 15;
 
+  void Awake() {
+    ScaleBackGround();
+  }
+
   void Start() {
-    this.transform.localScale = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width * 1.5f, Screen.height * 1.5f, Camera.main.nearClipPlane));
     camera = this.transform.parent;
   }
 
@@ -22,6 +25,22 @@ public class Controller : MonoBehaviour {
       camera.transform.position = new Vector3(player.transform.position.x, camera.transform.position.y, camera.transform.position.z);
     }
     Fuel();
+  }
+
+  void ScaleBackGround() {
+    SpriteRenderer spriteRenderer = this.GetComponent<SpriteRenderer>();
+
+    float cameraHeight = Camera.main.orthographicSize * 2;
+    Vector2 cameraSize = new Vector2(Camera.main.aspect * cameraHeight, cameraHeight);
+    Vector2 spriteSize = spriteRenderer.sprite.bounds.size;
+    Vector2 scale = transform.localScale;
+    if (cameraSize.x >= cameraSize.y) { // Landscape (or equal)
+      scale *= cameraSize.x / spriteSize.x;
+    } else { // Portrait
+      scale *= cameraSize.y / spriteSize.y;
+    }
+    this.transform.position = Vector2.zero; // Optional
+    this.transform.localScale = scale;
   }
 
   public void OnMouseDown() {
