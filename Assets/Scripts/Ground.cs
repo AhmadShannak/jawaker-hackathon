@@ -7,6 +7,8 @@ public class Ground : MonoBehaviour {
   Vector2 velocity;
   [SerializeField]
   Player player;
+  [SerializeField]
+  Transform inScreen, outScreen;
 
   // Start is called before the first frame update
   void Start() {
@@ -25,6 +27,20 @@ public class Ground : MonoBehaviour {
       other.transform.localEulerAngles = Vector3.zero;
       rb.velocity = Vector2.zero;
       rb.velocity = velocity;
+    }
+  }
+
+  void OnTriggerEnter2D(Collider2D other) {
+    if (other.CompareTag("Right") && this.transform.CompareTag("Child0")) {
+
+        this.transform.parent.parent = inScreen;
+      }
+   
+  }
+  void OnTriggerExit2D(Collider2D other) {
+    if (other.CompareTag("Left") && this.transform.CompareTag("Child2")) {
+      Debug.Log("OUT");
+      this.transform.parent.parent = outScreen;
     }
   }
 
