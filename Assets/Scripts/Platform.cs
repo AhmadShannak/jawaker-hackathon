@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour {
   void Awake() {
-    this.transform.position = Camera.main.ViewportToWorldPoint(new Vector3(0.5f,0.085f,10));
+    Vector3 cameraBounds = Camera.main.ViewportToWorldPoint(new Vector3(0, 0.085f ,10));
+    this.transform.position = new Vector3(this.transform.position.x, cameraBounds.y, 0);
   }
 }
