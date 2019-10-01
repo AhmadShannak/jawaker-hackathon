@@ -8,6 +8,8 @@ TagManager:
   - Child2
   - Left
   - Right
+  - Time
+  - Shield
   layers:
   - Default
   - TransparentFX
