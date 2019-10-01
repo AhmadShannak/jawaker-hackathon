@@ -1,0 +1,55 @@
+
+skeleton.png
+size: 112,376
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Bandana
+  rotate: false
+  xy: 69, 2
+  size: 41, 44
+  orig: 43, 46
+  offset: 1, 1
+  index: -1
+Body
+  rotate: false
+  xy: 2, 167
+  size: 90, 84
+  orig: 92, 86
+  offset: 1, 1
+  index: -1
+Head
+  rotate: false
+  xy: 2, 253
+  size: 108, 119
+  orig: 110, 121
+  offset: 1, 1
+  index: -1
+L_Hand
+  rotate: false
+  xy: 2, 20
+  size: 65, 72
+  orig: 67, 74
+  offset: 1, 1
+  index: -1
+L_Leg
+  rotate: false
+  xy: 71, 48
+  size: 34, 58
+  orig: 36, 60
+  offset: 1, 1
+  index: -1
+R_Hand
+  rotate: false
+  xy: 2, 94
+  size: 67, 71
+  orig: 69, 73
+  offset: 1, 1
+  index: -1
+R_Leg
+  rotate: false
+  xy: 71, 108
+  size: 36, 57
+  orig: 38, 59
+  offset: 1, 1
+  index: -1
