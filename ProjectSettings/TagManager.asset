@@ -10,6 +10,7 @@ TagManager:
   - Right
   - Time
   - Shield
+  - Enviroment
   layers:
   - Default
   - TransparentFX
