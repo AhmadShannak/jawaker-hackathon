@@ -7,9 +7,9 @@ public class Mountain : MonoBehaviour {
 
   void OnTriggerExit2D(Collider2D other) {
     if (other.CompareTag("Left")) {
-      outPos = this.transform.parent.GetChild(2).position;
-      outPos.x += + 39.89f;
-      this.transform.position = outPos;
+      outPos = this.transform.parent.GetChild(2).localPosition;
+      outPos.x +=  38.3098f;
+      this.transform.localPosition = outPos;
       this.transform.SetAsLastSibling();
     }
   }
