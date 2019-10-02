@@ -30,7 +30,6 @@ public class Player : MonoBehaviour {
 
   // Update is called once per frame
   void Update() {
-    Debug.Log("wow"+ oldPosition.y +"   " +this.transform.position.y);
     if (oldPosition.y > this.transform.position.y && !landing) {
       SwitchAnimation("Falling");
     }

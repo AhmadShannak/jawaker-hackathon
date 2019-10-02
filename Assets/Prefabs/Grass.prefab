@@ -93,8 +93,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f88d22957434f64b71790b695abd9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 5, y: 10}
+  velocity: {x: 4, y: 12}
   player: {fileID: 0}
+  inScreen: {fileID: 0}
+  outScreen: {fileID: 0}
+  ignorePlayer: 0
 --- !u!61 &4362461462218341593
 BoxCollider2D:
   m_ObjectHideFlags: 0

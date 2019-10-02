@@ -10,6 +10,7 @@ public class Ground : MonoBehaviour {
   [SerializeField]
   Transform inScreen, outScreen;
 
+  public bool ignorePlayer = false;
   // Start is called before the first frame update
   void Start() {
 
@@ -20,7 +21,7 @@ public class Ground : MonoBehaviour {
   }
 
   void OnCollisionEnter2D(Collision2D other) {
-    if (other.transform.CompareTag("Player")) {
+    if (other.transform.CompareTag("Player") && !ignorePlayer) {
       Rigidbody2D rb = other.gameObject.GetComponent<Rigidbody2D>();
       other.transform.localEulerAngles = Vector3.zero;
       rb.velocity = Vector2.zero;
@@ -39,12 +40,14 @@ public class Ground : MonoBehaviour {
   void OnTriggerExit2D(Collider2D other) {
     if (other.CompareTag("Left") && this.transform.CompareTag("Child2")) {
       Debug.Log("OUT");
+      LevelGenerator.Generate(this.transform.parent.gameObject, outScreen.transform.GetChild(outScreen.transform.childCount - 1).localPosition);
+      Debug.Log(outScreen.transform.GetChild(outScreen.transform.childCount - 1).localPosition);
       this.transform.parent.parent = outScreen;
     }
   }
 
   void OnCollisionExit2D(Collision2D other) {
-    if (other.transform.CompareTag("Player")) {
+    if (other.transform.CompareTag("Player") && !ignorePlayer) {
       other.transform.localEulerAngles = Vector3.zero;
     }
   }
