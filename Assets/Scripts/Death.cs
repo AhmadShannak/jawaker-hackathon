@@ -24,6 +24,7 @@ public class Death : MonoBehaviour {
       }
       // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
        Application.LoadLevel(Application.loadedLevel);
+       Score.currentLevel = 0;
     }
   }
 }
