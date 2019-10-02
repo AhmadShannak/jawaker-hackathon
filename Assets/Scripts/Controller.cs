@@ -73,4 +73,8 @@ public class Controller : MonoBehaviour {
       }
     }
   }
+    public void ActivateAddTime()
+    {
+        pauseFuel = pauseFuel + 2 > maxFuel ? maxFuel : pauseFuel + 2;
+    } 
 }

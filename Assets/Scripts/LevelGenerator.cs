@@ -119,9 +119,9 @@ public class LevelGenerator : MonoBehaviour {
         {
             Score.avilableItems--;
             float randomHeight = UnityEngine.Random.Range(0.3f, 0.7f);
-            Vector3 vector = Camera.main.ViewportToWorldPoint(new Vector3(0,randomHeight,0));
+            Vector3 vector = Camera.main.ViewportToWorldPoint(new Vector3(0,randomHeight,10));
             vector.x = outScreen.GetChild(outScreen.childCount - 1).position.x;
-            Instantiate(items[itemIndex], vector,Quaternion.identity, itemSpawner.transform);
+            Instantiate(items[2], vector,Quaternion.identity, itemSpawner.transform);
             generating = false;
 
         }
