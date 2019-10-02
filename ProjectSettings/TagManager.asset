@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Child0
+  - Child2
+  - Left
+  - Right
+  - Time
+  - Shield
   layers:
   - Default
   - TransparentFX
