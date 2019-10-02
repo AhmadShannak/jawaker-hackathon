@@ -12,6 +12,7 @@ public class Items : MonoBehaviour {
   
     if (other.CompareTag("Player") && this.CompareTag("Time")) {
             GameObject.Find("BG").GetComponent<Controller>().ActivateAddTime();
+            Destroy(this.gameObject);
     } else if (other.CompareTag("Player") && this.CompareTag("Shield")) {
       // Give Shield
     } else if (other.CompareTag("Left")) {

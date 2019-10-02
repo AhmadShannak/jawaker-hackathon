@@ -37,7 +37,7 @@ public class Score : MonoBehaviour {
     speed += 0.07f;
     Jumpy.Time.timeScale = (1 + speed);
     UnityEngine.Time.timeScale = (1 + speed * 2f);
-        avilableItems = currentLevel;
+    avilableItems = currentLevel;
     
   }
 }
