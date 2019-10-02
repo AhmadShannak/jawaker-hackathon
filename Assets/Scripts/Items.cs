@@ -9,12 +9,14 @@ public class Items : MonoBehaviour {
   }
 
   private void OnTriggerEnter2D(Collider2D other) {
+  
     if (other.CompareTag("Player") && this.CompareTag("Time")) {
       // Add Time
     } else if (other.CompareTag("Player") && this.CompareTag("Shield")) {
       // Give Shield
     } else if (other.CompareTag("Left")) {
       Destroy(this);
-    }
+
+;    }
   }
 }
