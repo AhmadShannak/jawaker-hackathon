@@ -8,16 +8,23 @@ public class LevelGenerator : MonoBehaviour {
   Transform inScreen, outScreen;
   [SerializeField]
   Transform leftWall, rightWall;
+    [SerializeField]
+    GameObject[] items;
+    [SerializeField]
+    GameObject itemSpawner;
 
-  private static float gap;
+    private static float gap;
   private static int grounds = 3;
   static float[] random = new float[4];
   static bool[] sign = { false, false, true, true };
   static float[] weight = new float[4];
   static bool done = false;
   static int counter = 0;
+  static LevelGenerator leveler;
+   static bool generating = false;
   // Start is called before the first frame update
   void Awake() {
+    leveler = this;
     rightWall.position = Camera.main.ViewportToWorldPoint(new Vector3(1, 0.5f, 0));
     leftWall.position = Camera.main.ViewportToWorldPoint(new Vector3(0, 0.5f, 0));
     weight[0] = 30;
@@ -93,5 +100,30 @@ public class LevelGenerator : MonoBehaviour {
       grounds[0].ignorePlayer = true;
       grounds[0].GetComponent<BoxCollider2D>().isTrigger = true;
     }
+        SpawnItem();
   }
+
+    private static void SpawnItem() {
+        if (!generating)
+        {
+            generating = true;
+            int createAfter = UnityEngine.Random.Range(3, 15);
+            leveler.Invoke("CreateItem", createAfter);
+        }
+
+    }
+
+    private void CreateItem(){
+        int itemIndex = UnityEngine.Random.Range(1, 3);
+        if (Score.avilableItems != 0)
+        {
+            Score.avilableItems--;
+            float randomHeight = UnityEngine.Random.Range(0.3f, 0.7f);
+            Vector3 vector = Camera.main.ViewportToWorldPoint(new Vector3(0,randomHeight,10));
+            vector.x = outScreen.GetChild(outScreen.childCount - 1).position.x - 15;
+            Instantiate(items[2], vector,Quaternion.identity, itemSpawner.transform);
+            generating = false;
+
+        }
+    }
 }

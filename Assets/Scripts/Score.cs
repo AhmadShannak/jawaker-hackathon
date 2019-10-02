@@ -9,6 +9,7 @@ public class Score : MonoBehaviour {
   public static int currentLevel = 1;
   public static float speed = 0;
   public GameObject player;
+    public static int avilableItems = 1;
   // Start is called before the first frame update
   void Start() {
     score = 1;
@@ -36,6 +37,7 @@ public class Score : MonoBehaviour {
     speed += 0.07f;
     Jumpy.Time.timeScale = (1 + speed);
     UnityEngine.Time.timeScale = (1 + speed * 2f);
+    avilableItems = currentLevel;
     
   }
 }
