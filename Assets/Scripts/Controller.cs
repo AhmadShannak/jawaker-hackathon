@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
 public class Controller : MonoBehaviour {
   [SerializeField]
   Player player;
   [SerializeField]
   Transform mountains;
+  [SerializeField]
+  Slider slider;
 
   Transform camera;
   float pauseFuel = 15;
@@ -61,6 +65,7 @@ public class Controller : MonoBehaviour {
   void Fuel() {
     if (useFuel) {
       if (pauseFuel > 0.2f) {
+        slider.value = pauseFuel;
         pauseFuel -= Time.unscaledDeltaTime;
         Jumpy.Time.SlowTime();
       } else {
@@ -68,13 +73,15 @@ public class Controller : MonoBehaviour {
       }
     } else {
       if (pauseFuel < maxFuel) {
-        pauseFuel += Time.unscaledDeltaTime / 5;
+        slider.value = pauseFuel;
+        pauseFuel += Time.unscaledDeltaTime / 3;
         Jumpy.Time.ReseTime();
       }
     }
   }
     public void ActivateAddTime()
     {
-        pauseFuel = pauseFuel + 2 > maxFuel ? maxFuel : pauseFuel + 2;
+      slider.value = pauseFuel;
+      pauseFuel = pauseFuel + 2 > maxFuel ? maxFuel : pauseFuel + 2;
     } 
 }

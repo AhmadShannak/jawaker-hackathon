@@ -28,9 +28,14 @@ public class InGameMenu : MonoBehaviour {
     Time.timeScale = 0;
     Jumpy.Time.timeScale = 0;
   }
+
   public void Resume() {
     panel.SetActive(false);
     controller.enabled = true;
     Jumpy.Time.ReseTime();
+  }
+
+  public void Defeat() {
+
   }
 }
