@@ -27,10 +27,12 @@ public class Controller : MonoBehaviour {
   }
 
   void Update() {
-    if (player.transform.position.x >= this.transform.position.x) {
-      camera.transform.position = new Vector3(player.transform.position.x, camera.transform.position.y, camera.transform.position.z);
+    if (player != null) {
+      if (player.transform.position.x >= this.transform.position.x) {
+        camera.transform.position = new Vector3(player.transform.position.x, camera.transform.position.y, camera.transform.position.z);
+      }
+      Fuel();
     }
-    Fuel();
   }
 
   void ScaleBackGround() {
@@ -50,7 +52,7 @@ public class Controller : MonoBehaviour {
     this.transform.localScale = scale;
     // Now ssetting the mountains
     mountains.position = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 10));
-    mountains.localScale = new Vector3(scale.x,mountains.localScale.y,0);
+    mountains.localScale = new Vector3(scale.x, mountains.localScale.y, 0);
   }
 
   public void OnMouseDown() {
@@ -80,9 +82,8 @@ public class Controller : MonoBehaviour {
       }
     }
   }
-    public void ActivateAddTime()
-    {
-      slider.value = pauseFuel;
-      pauseFuel = pauseFuel + 2 > maxFuel ? maxFuel : pauseFuel + 2;
-    } 
+  public void ActivateAddTime() {
+    slider.value = pauseFuel;
+    pauseFuel = pauseFuel + 2 > maxFuel ? maxFuel : pauseFuel + 2;
+  }
 }

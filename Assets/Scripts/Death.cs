@@ -6,25 +6,37 @@ using UnityEngine.SceneManagement;
 public class Death : MonoBehaviour {
   [SerializeField]
   Score _score;
+  [SerializeField]
+  GameObject defeatPopUp;
+
   void Awake() {
     this.transform.position = Camera.main.ViewportToWorldPoint(new Vector3(0.5f,0,0));
   }
   private void OnTriggerEnter2D(Collider2D other) {
     if (other.CompareTag("Player")) {
+      Destroy(other.gameObject);
       string highScore = StorageHelper.ReadStorage(StorageHelper.HIGH_SCORE_KEY);
       if (!string.IsNullOrEmpty(highScore)){
-        if (_score.score < int.Parse(highScore)) {
+        if (_score.score > int.Parse(highScore)) {
+          highScore = _score.score.ToString();
+          StorageHelper.WriteStorage(StorageHelper.HIGH_SCORE_KEY, _score.score.ToString());
           Debug.Log("NewHighScore");
         } else {
           Debug.Log("OldScoreRocks");
         }
       } else {
+        highScore = _score.score.ToString();
         StorageHelper.WriteStorage(StorageHelper.HIGH_SCORE_KEY, _score.score.ToString());
         Debug.Log("New HighScore");
       }
-      // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-       Application.LoadLevel(Application.loadedLevel);
-       Score.currentLevel = 0;
+      defeatPopUp.SetActive(true);
+      defeatPopUp.transform.parent.GetComponent<InGameMenu>().Defeat(_score.score.ToString(),highScore);
+      Time.timeScale = 0;
+      Jumpy.Time.timeScale = 0;
+      //  Score.currentLevel = 1;
+      //  Debug.Log(Score.speed +"   "+ Score.avilableItems + "  "+_score.score);
+      //  Application.LoadLevel(Application.loadedLevel);
+      //  Score.currentLevel = 1;
     }
   }
 }

@@ -12,6 +12,7 @@ public class Score : MonoBehaviour {
     public static int avilableItems = 1;
   // Start is called before the first frame update
   void Start() {
+    Jumpy.Time.timeScale =1; 
     currentLevel = 1;
     speed = 0;
     avilableItems = 1;
@@ -26,11 +27,13 @@ public class Score : MonoBehaviour {
   }
 
   void UpdateScore() {
+    if (player != null){
     int position = (int)player.transform.position.x;
     position = position < score ? 0 : position;
     score = (int)(position * levelFactor);
     if (score >= nextLevel) {
       LevelUp();
+    }
     }
   }
 
