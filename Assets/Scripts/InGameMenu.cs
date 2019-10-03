@@ -7,7 +7,7 @@ using TMPro;
 
 public class InGameMenu : MonoBehaviour {
   [SerializeField]
-  Controller controller;
+  ControllerCollider controller;
   [SerializeField]
   GameObject panel;
   [SerializeField]

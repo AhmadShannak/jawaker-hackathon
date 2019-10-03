@@ -9,8 +9,6 @@ public class Controller : MonoBehaviour {
   Player player;
   [SerializeField]
   Transform mountains;
-  [SerializeField]
-  Slider slider;
 
   Transform camera;
   float pauseFuel = 15;
@@ -31,7 +29,6 @@ public class Controller : MonoBehaviour {
       if (player.transform.position.x >= this.transform.position.x) {
         camera.transform.position = new Vector3(player.transform.position.x, camera.transform.position.y, camera.transform.position.z);
       }
-      Fuel();
     }
   }
 
@@ -55,35 +52,4 @@ public class Controller : MonoBehaviour {
     mountains.localScale = new Vector3(scale.x, mountains.localScale.y, 0);
   }
 
-  public void OnMouseDown() {
-    if (outOfFuel)
-      return;
-    useFuel = true;
-  }
-
-  public void OnMouseUp() {
-    useFuel = false;
-  }
-
-  void Fuel() {
-    if (useFuel) {
-      if (pauseFuel > 0.2f) {
-        slider.value = pauseFuel;
-        pauseFuel -= Time.unscaledDeltaTime;
-        Jumpy.Time.SlowTime();
-      } else {
-        useFuel = false;
-      }
-    } else {
-      if (pauseFuel < maxFuel) {
-        slider.value = pauseFuel;
-        pauseFuel += Time.unscaledDeltaTime / 3;
-        Jumpy.Time.ReseTime();
-      }
-    }
-  }
-  public void ActivateAddTime() {
-    slider.value = pauseFuel;
-    pauseFuel = pauseFuel + 2 > maxFuel ? maxFuel : pauseFuel + 2;
-  }
 }
