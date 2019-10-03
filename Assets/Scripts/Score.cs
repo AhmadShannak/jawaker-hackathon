@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Score : MonoBehaviour {
   public int score;
@@ -10,6 +11,8 @@ public class Score : MonoBehaviour {
   public static float speed = 0;
   public GameObject player;
     public static int avilableItems = 1;
+    [SerializeField]
+    TextMeshProUGUI scoreLabel;
   // Start is called before the first frame update
   void Start() {
     Jumpy.Time.timeScale =1; 
@@ -24,12 +27,13 @@ public class Score : MonoBehaviour {
   // Update is called once per frame
   void Update() {
     UpdateScore();
+    scoreLabel.text = score.ToString();
   }
 
   void UpdateScore() {
     if (player != null){
     int position = (int)player.transform.position.x;
-    position = position < score ? 0 : position;
+    position = position < 0 ? 0 : position;
     score = (int)(position * levelFactor);
     if (score >= nextLevel) {
       LevelUp();

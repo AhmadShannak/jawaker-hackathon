@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class Death : MonoBehaviour {
   [SerializeField]
@@ -17,7 +18,7 @@ public class Death : MonoBehaviour {
       Destroy(other.gameObject);
       string highScore = StorageHelper.ReadStorage(StorageHelper.HIGH_SCORE_KEY);
       if (!string.IsNullOrEmpty(highScore)){
-        if (_score.score > int.Parse(highScore)) {
+        if (_score.score > Int32.Parse(highScore)) {
           highScore = _score.score.ToString();
           StorageHelper.WriteStorage(StorageHelper.HIGH_SCORE_KEY, _score.score.ToString());
           Debug.Log("NewHighScore");
