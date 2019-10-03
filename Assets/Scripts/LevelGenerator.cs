@@ -27,10 +27,18 @@ public class LevelGenerator : MonoBehaviour {
     leveler = this;
     rightWall.position = Camera.main.ViewportToWorldPoint(new Vector3(1, 0.5f, 0));
     leftWall.position = Camera.main.ViewportToWorldPoint(new Vector3(0, 0.5f, 0));
+    random = new float[4];
+    sign [0] = false;
+    sign[1] = false;
+    sign[2] = true;
+    sign[3] = true;
+    done = false;
     weight[0] = 30;
     weight[1] = 45;
     weight[2] = 15;
     weight[3] = 5;
+    generating = false;
+    counter = 0;
   }
 
   public static void Generate(GameObject outie, Vector3 newPosition) {

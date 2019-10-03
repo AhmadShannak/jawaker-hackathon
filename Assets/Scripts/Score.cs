@@ -12,6 +12,10 @@ public class Score : MonoBehaviour {
     public static int avilableItems = 1;
   // Start is called before the first frame update
   void Start() {
+    currentLevel = 1;
+    speed = 0;
+    avilableItems = 1;
+    levelFactor = 1;
     score = 1;
     nextLevel = 50;
   }
