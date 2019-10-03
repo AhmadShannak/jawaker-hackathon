@@ -39,12 +39,13 @@ public class Controller : MonoBehaviour {
     float cameraHeight = Camera.main.orthographicSize * 2;
     Vector2 cameraSize = new Vector2(Camera.main.aspect * cameraHeight, cameraHeight);
     Vector2 spriteSize = spriteRenderer.sprite.bounds.size;
-    Vector2 scale = transform.localScale;
+    Vector3 scale = transform.localScale;
     if (cameraSize.x >= cameraSize.y) { // Landscape (or equal)
       scale *= cameraSize.x / spriteSize.x;
     } else { // Portrait
       scale *= cameraSize.y / spriteSize.y;
     }
+    scale.z = 1;
     this.transform.position = Vector2.zero; // Optional
     this.transform.localScale = scale;
     // Now ssetting the mountains
