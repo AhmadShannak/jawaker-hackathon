@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Spine.Unity;
+using Spine;
 
 public class Score : MonoBehaviour {
   public int score;
@@ -13,6 +15,8 @@ public class Score : MonoBehaviour {
     public static int avilableItems = 1;
     [SerializeField]
     TextMeshProUGUI scoreLabel;
+    [SerializeField]
+    GameObject eshmaratab;
   // Start is called before the first frame update
   void Start() {
     Jumpy.Time.timeScale =1; 
@@ -49,6 +53,11 @@ public class Score : MonoBehaviour {
     Jumpy.Time.timeScale = (1 + speed);
     UnityEngine.Time.timeScale = (1 + speed * 2f);
     avilableItems = currentLevel;
+    GameObject go = Instantiate(eshmaratab, eshmaratab.transform.position,Quaternion.identity, eshmaratab.transform.parent);
+    SkeletonGraphic skeleton = go.GetComponent<SkeletonGraphic>();
+    skeleton.timeScale = 0.7f;
+    go.SetActive(true);
+    Destroy(go,1.5f);
     
   }
 }
