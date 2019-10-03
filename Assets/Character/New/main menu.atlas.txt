@@ -1,0 +1,41 @@
+
+main menu.png
+size: 1684,716
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/Clouds
+  rotate: false
+  xy: 2, 452
+  size: 1678, 262
+  orig: 1680, 264
+  offset: 1, 1
+  index: -1
+images/Layer 1
+  rotate: false
+  xy: 2, 2
+  size: 707, 448
+  orig: 709, 450
+  offset: 1, 1
+  index: -1
+images/Name
+  rotate: false
+  xy: 711, 83
+  size: 494, 367
+  orig: 496, 369
+  offset: 1, 1
+  index: -1
+images/Play
+  rotate: false
+  xy: 1207, 136
+  size: 397, 176
+  orig: 399, 178
+  offset: 1, 1
+  index: -1
+images/Score
+  rotate: false
+  xy: 1207, 314
+  size: 306, 136
+  orig: 308, 138
+  offset: 1, 1
+  index: -1

@@ -27,6 +27,7 @@ public class InGameMenu : MonoBehaviour {
     SceneManager.LoadScene("MainMenu");
   }
   public void Retry() {
+    Score.currentLevel = 1;
     Application.LoadLevel(Application.loadedLevel);
     Debug.Log("reset");
     Jumpy.Time.ReseTime();
