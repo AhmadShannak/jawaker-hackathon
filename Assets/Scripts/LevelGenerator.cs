@@ -27,10 +27,18 @@ public class LevelGenerator : MonoBehaviour {
     leveler = this;
     rightWall.position = Camera.main.ViewportToWorldPoint(new Vector3(1, 0.5f, 0));
     leftWall.position = Camera.main.ViewportToWorldPoint(new Vector3(0, 0.5f, 0));
+    random = new float[4];
+    sign [0] = false;
+    sign[1] = false;
+    sign[2] = true;
+    sign[3] = true;
+    done = false;
     weight[0] = 30;
     weight[1] = 45;
     weight[2] = 15;
     weight[3] = 5;
+    generating = false;
+    counter = 0;
   }
 
   public static void Generate(GameObject outie, Vector3 newPosition) {
@@ -114,14 +122,21 @@ public class LevelGenerator : MonoBehaviour {
     }
 
     private void CreateItem(){
-        int itemIndex = UnityEngine.Random.Range(1, 3);
+        int i = 1;
         if (Score.avilableItems != 0)
         {
-            Score.avilableItems--;
             float randomHeight = UnityEngine.Random.Range(0.3f, 0.7f);
             Vector3 vector = Camera.main.ViewportToWorldPoint(new Vector3(0,randomHeight,10));
             vector.x = outScreen.GetChild(outScreen.childCount - 1).position.x - 15;
-            Instantiate(items[2], vector,Quaternion.identity, itemSpawner.transform);
+            if (Score.avilableItems%2 == 1)
+            {
+                i = 1;
+            }
+            else {
+                i = 2;
+            }
+            Score.avilableItems--;
+            Instantiate(items[i], vector, Quaternion.identity, itemSpawner.transform);
             generating = false;
 
         }

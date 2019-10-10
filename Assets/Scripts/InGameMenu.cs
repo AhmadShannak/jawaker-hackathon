@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class InGameMenu : MonoBehaviour {
   [SerializeField]
-  Controller controller;
+  ControllerCollider controller;
   [SerializeField]
   GameObject panel;
+  [SerializeField]
+  TextMeshProUGUI score, highScore;
+
   // Start is called before the first frame update
   void Start() {
 
@@ -18,8 +22,15 @@ public class InGameMenu : MonoBehaviour {
   void Update() {
 
   }
+
   public void GoBack() {
     SceneManager.LoadScene("MainMenu");
+  }
+  public void Retry() {
+    Score.currentLevel = 1;
+    Application.LoadLevel(Application.loadedLevel);
+    Debug.Log("reset");
+    Jumpy.Time.ReseTime();
   }
 
   public void Pause() {
@@ -35,7 +46,8 @@ public class InGameMenu : MonoBehaviour {
     Jumpy.Time.ReseTime();
   }
 
-  public void Defeat() {
-
+  public void Defeat(string _score, string _highScore) {
+    score.text = _score;
+    highScore.text = _highScore;
   }
 }

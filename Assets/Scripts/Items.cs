@@ -11,10 +11,10 @@ public class Items : MonoBehaviour {
   private void OnTriggerEnter2D(Collider2D other) {
 
     if (other.CompareTag("Player") && this.CompareTag("Time")) {
-      GameObject.Find("BG").GetComponent<Controller>().ActivateAddTime();
+      GameObject.Find("Controller").GetComponent<ControllerCollider>().ActivateAddTime();
       Destroy(this.gameObject);
-    } else if (other.CompareTag("Player") && this.CompareTag("Shield")) {
-      // Give Shield
+    } else if (other.CompareTag("Player") && this.CompareTag("Shield")) { 
+        GameObject.Find("Bottom").GetComponent<Death>().DeathScene(other);
     } else if (other.CompareTag("Left")) {
       Destroy(this.gameObject);
     }
