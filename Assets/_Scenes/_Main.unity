@@ -3642,7 +3642,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2131187325}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &856190091
+--- !u!114 &856190093
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3661,7 +3661,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2131187325}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &858927317
+--- !u!114 &858927319
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4884,7 +4884,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2131187325}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1424383383
+--- !u!114 &1424383385
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7271,6 +7271,11 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 620298782}
+    - target: {fileID: 6708654120005558077, guid: 5e4c3cc6eb24e41fca4c5cc012f25a07,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 330303603}
     - target: {fileID: 6708654119912938554, guid: 5e4c3cc6eb24e41fca4c5cc012f25a07,
         type: 3}
       propertyPath: orthographic size

@@ -4,24 +4,16 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Controller : MonoBehaviour {
+public class CameraView : MonoBehaviour {
   [SerializeField]
   Player player;
   [SerializeField]
   Transform mountains;
-
+  [SerializeField]
   Transform camera;
-  float pauseFuel = 15;
-  bool outOfFuel = false;
-  bool useFuel = false;
-  float maxFuel = 15;
 
   void Awake() {
     ScaleBackGround();
-  }
-
-  void Start() {
-    camera = this.transform.parent;
   }
 
   void Update() {
@@ -47,9 +39,9 @@ public class Controller : MonoBehaviour {
     scale.z = 1;
     this.transform.position = Vector2.zero; // Optional
     this.transform.localScale = scale;
-    // Now ssetting the mountains
-    mountains.position = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 10));
-    mountains.localScale = new Vector3(scale.x, mountains.localScale.y, 0);
+    if (mountains.gameObject.activeInHierarchy) {
+      mountains.position = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 10));
+      mountains.localScale = new Vector3(scale.x, mountains.localScale.y, 0);
+    }
   }
-
 }
