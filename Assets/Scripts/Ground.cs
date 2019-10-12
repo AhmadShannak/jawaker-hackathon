@@ -32,11 +32,10 @@ public class Ground : MonoBehaviour {
 
   void OnTriggerEnter2D(Collider2D other) {
     if (other.CompareTag("Right") && this.transform.CompareTag("Child0")) {
-
-        this.transform.parent.parent = inScreen;
-      }
-   
+      this.transform.parent.parent = inScreen;
+    }
   }
+
   void OnTriggerExit2D(Collider2D other) {
     if (other.CompareTag("Left") && this.transform.CompareTag("Child2")) {
       LevelGenerator.Generate(this.transform.parent.gameObject, outScreen.transform.GetChild(outScreen.transform.childCount - 1).localPosition);

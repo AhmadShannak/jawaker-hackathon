@@ -12,12 +12,13 @@ public class Score : MonoBehaviour {
   public static int currentLevel = 1;
   public static float speed = 0;
   public GameObject player;
-    public static int avilableItems = 1;
-    [SerializeField]
-    TextMeshProUGUI scoreLabel;
-    [SerializeField]
-    GameObject eshmaratab;
-  // Start is called before the first frame update
+  public static int avilableItems = 1;
+
+  [SerializeField]
+  TextMeshProUGUI scoreLabel;
+  [SerializeField]
+  GameObject eshmaratab;
+
   void Start() {
     Jumpy.Time.timeScale =1; 
     currentLevel = 1;
@@ -28,7 +29,6 @@ public class Score : MonoBehaviour {
     nextLevel = 50;
   }
 
-  // Update is called once per frame
   void Update() {
     UpdateScore();
     scoreLabel.text = score.ToString();
@@ -36,12 +36,12 @@ public class Score : MonoBehaviour {
 
   void UpdateScore() {
     if (player != null){
-    int position = (int)player.transform.position.x;
-    position = position < 0 ? 0 : position;
-    score = (int)(position * levelFactor);
-    if (score >= nextLevel) {
-      LevelUp();
-    }
+      int position = (int)player.transform.position.x;
+      position = position < 0 ? 0 : position;
+      score = (int)(position * levelFactor);
+      if (score >= nextLevel) {
+        LevelUp();
+      }
     }
   }
 
