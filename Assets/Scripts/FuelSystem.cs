@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ControllerCollider : MonoBehaviour {
-    [SerializeField]
+public class FuelSystem : MonoBehaviour {
+  [SerializeField]
   Player player;
-    [SerializeField]
+  [SerializeField]
   Slider slider;
-    float pauseFuel = 15;
-  bool outOfFuel = false;
+  [SerializeField]
+  float maxFuel = 15, fuelPerSecond = 3;
+  
+  float pauseFuel = 15;
   bool useFuel = false;
-  float maxFuel = 15;
-  // Start is called before the first frame update
-  void Start() {
 
-  }
 
   // Update is called once per frame
   void Update() {
@@ -23,17 +21,18 @@ public class ControllerCollider : MonoBehaviour {
       Fuel();
     }
   }
-  private void OnMouseDown() {
-    if (outOfFuel)
-    return;
+
+  void OnMouseDown() {
     useFuel = true;
   }
-  private void OnMouseUp() {
+
+  void OnMouseUp() {
     useFuel = false;
   }
-    void Fuel() {
+
+  void Fuel() {
     if (useFuel) {
-      if (pauseFuel > 0.2f) {
+      if (pauseFuel > 0.1f) {
         slider.value = pauseFuel;
         pauseFuel -= Time.unscaledDeltaTime;
         Jumpy.Time.SlowTime();
@@ -41,14 +40,19 @@ public class ControllerCollider : MonoBehaviour {
         useFuel = false;
       }
     } else {
-      if (pauseFuel < maxFuel) {
-        slider.value = pauseFuel;
-        pauseFuel += Time.unscaledDeltaTime / 3;
-        Jumpy.Time.ReseTime();
-      }
+      ReChargeFuel();
     }
   }
-    public void ActivateAddTime() {
+
+  void ReChargeFuel() {
+    if (pauseFuel < maxFuel) {
+      slider.value = pauseFuel;
+      pauseFuel += Time.unscaledDeltaTime / fuelPerSecond;
+      Jumpy.Time.ReseTime();
+    }
+  }
+
+  public void ActivateAddTime() {
     slider.value = pauseFuel;
     pauseFuel = pauseFuel + 2 > maxFuel ? maxFuel : pauseFuel + 2;
   }

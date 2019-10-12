@@ -2126,7 +2126,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Paused
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 52e89192f5ada4a418e54047bc72b7c6, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21969148775034836, guid: 52e89192f5ada4a418e54047bc72b7c6,
     type: 2}
   m_fontSharedMaterials: []
@@ -3729,7 +3729,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 079
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 52e89192f5ada4a418e54047bc72b7c6, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21969148775034836, guid: 52e89192f5ada4a418e54047bc72b7c6,
     type: 2}
   m_fontSharedMaterials: []
@@ -5661,7 +5661,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 079
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 52e89192f5ada4a418e54047bc72b7c6, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 21969148775034836, guid: 52e89192f5ada4a418e54047bc72b7c6,
     type: 2}
   m_fontSharedMaterials: []
@@ -5829,9 +5829,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 9999
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 52e89192f5ada4a418e54047bc72b7c6, type: 2}
-  m_sharedMaterial: {fileID: 21969148775034836, guid: 52e89192f5ada4a418e54047bc72b7c6,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7207,6 +7206,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5660798068848991483, guid: 5e4c3cc6eb24e41fca4c5cc012f25a07,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 551724808}
+    - target: {fileID: 5660798068848991483, guid: 5e4c3cc6eb24e41fca4c5cc012f25a07,
+        type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 620298782}
     - target: {fileID: 6708654120005558077, guid: 5e4c3cc6eb24e41fca4c5cc012f25a07,
         type: 3}
       propertyPath: player
@@ -7262,7 +7271,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 39d7bd59194284cfea5295ea1d8c585a, type: 2}
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6708654120005558076, guid: 5e4c3cc6eb24e41fca4c5cc012f25a07,
         type: 3}
       propertyPath: m_Enabled
@@ -7388,16 +7397,16 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5660798068848991483, guid: 5e4c3cc6eb24e41fca4c5cc012f25a07,
+    - target: {fileID: 345237201378333336, guid: 5e4c3cc6eb24e41fca4c5cc012f25a07,
         type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 551724808}
-    - target: {fileID: 5660798068848991483, guid: 5e4c3cc6eb24e41fca4c5cc012f25a07,
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6150551790858696083, guid: 5e4c3cc6eb24e41fca4c5cc012f25a07,
         type: 3}
-      propertyPath: slider
-      value: 
-      objectReference: {fileID: 620298782}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e4c3cc6eb24e41fca4c5cc012f25a07, type: 3}
 --- !u!1 &2144059643
