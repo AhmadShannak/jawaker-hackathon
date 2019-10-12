@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3242,7 +3242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df3a06b8f5ae4644818c85ad2e82555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 1700359196}
+  fuelSystem: {fileID: 0}
   panel: {fileID: 2144059643}
   score: {fileID: 937734713}
   highScore: {fileID: 1575185501}
@@ -4959,7 +4959,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.3842287, y: 0}
+  m_Offset: {x: -0.3842287, y: 0.48841476}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4970,7 +4970,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 23.963194, y: 1}
+  m_Size: {x: 23.963194, y: 1.9768295}
   m_EdgeRadius: 0
 --- !u!114 &1469125927
 MonoBehaviour:
@@ -6014,18 +6014,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1700359196 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5660798068848991483, guid: 5e4c3cc6eb24e41fca4c5cc012f25a07,
-    type: 3}
-  m_PrefabInstance: {fileID: 2131187325}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a74e0c06bee8c45789f0391dd8187957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1703033158 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7492230225398205022, guid: be32389b674d343e8a7990d63e9afc7e,

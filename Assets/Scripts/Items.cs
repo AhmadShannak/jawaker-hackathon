@@ -14,7 +14,7 @@ public class Items : MonoBehaviour {
       GameObject.Find("Controller").GetComponent<FuelSystem>().ActivateAddTime();
       Destroy(this.gameObject);
     } else if (other.CompareTag("Player") && this.CompareTag("Shield")) { 
-        GameObject.Find("Bottom").GetComponent<Death>().DeathScene(other);
+        GameObject.Find("Bottom").GetComponent<Death>().KillPlayer(other);
     } else if (other.CompareTag("Left")) {
       Destroy(this.gameObject);
     }
